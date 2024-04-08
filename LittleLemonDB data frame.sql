@@ -124,4 +124,10 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+alter table `LittleLemonDB`.`bookings` 
+add column CustomerID int not null ;
 
+SET FOREIGN_KEY_CHECKS=1;
+
+alter table `LittleLemonDB`.`bookings` 
+add foreign key (CustomerID) references littlelemondb.customerdetails(CustomerID) ;
